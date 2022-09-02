@@ -1,0 +1,6 @@
+<!-- message thank you for your contact! in canvas -->
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags %} <script>alert("{{ message }}")</script> {% endif %}
+    {% endfor %}
+{% endif %}

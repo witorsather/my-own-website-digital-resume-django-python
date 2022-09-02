@@ -1,0 +1,79 @@
+<!-- page similar index -->
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %} Did Coding - Contact {% endblock %}
+{% block decription %}{% endblock%}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+
+<!-- section 1 of 2 = contact us -->
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-6">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-md-3">Contact us below</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section 2 of 2 = form -->
+<section>
+  <div class="lightBg">
+    <div class="container">
+        <!-- redirect to "urls.py" -->
+        <form id="contactForm" method="POST" action="/contact/">
+        {% csrf_token %}
+            <!-- redirect to form is contact form in "form.py" -->
+            <label for="name">Name</label>
+            <!-- <input type="text" id="name" name="name" placeholder="Your name.."> -->
+            {{form.name}}
+
+            <label for="email">Email</label>
+            <!-- <input type="email" id="email" name="email" placeholder="Your email.."> -->
+            {{form.email}}
+
+            <label for="subject">Message</label>
+            <!-- <textarea id="message" name="message" placeholder="Write something.." rows="6"></textarea> -->
+            {{form.message}}
+
+            <input class='btn btnPrimary' type="submit" value="Submit">
+        </form>
+    </div>
+  </div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
